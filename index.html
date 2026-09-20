@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Laboratorio de mejora de mi hoja de vida</title>
+    <meta name="description"
+        content="Durante 3 - Construcción. Revisión y mejora de una hoja de vida mediante IA generativa.">
+    <style>
+        :root {
+            --bg: #07111f;
+            --panel: #102038;
+            --line: #2b4565;
+            --text: #eef6ff;
+            --muted: #aabbd0;
+            --a: #61dafb
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+
+        body {
+            margin: 0;
+            background: linear-gradient(180deg, #07111f, #0c1829);
+            color: var(--text);
+            font: 16px/1.6 system-ui, Segoe UI, Arial
+        }
+
+        .wrap {
+            width: min(1050px, 92%);
+            margin: auto
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 5;
+            background: #07111fee;
+            border-bottom: 1px solid var(--line);
+            padding: 18px 0
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            align-items: center
+        }
+
+        .badge {
+            color: var(--a);
+            border: 1px solid var(--line);
+            border-radius: 99px;
+            padding: 5px 10px;
+            font-size: 13px
+        }
+
+        .hero {
+            text-align: center;
+            padding: 70px 0 45px
+        }
+
+        .k {
+            color: var(--a);
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-size: 12px
+        }
+
+        h1 {
+            font-size: clamp(2.2rem, 6vw, 4.5rem);
+            line-height: 1.05;
+            margin: 14px 0
+        }
+
+        h2 {
+            margin-top: 8px
+        }
+
+        .muted {
+            color: var(--muted)
+        }
+
+        .card {
+            background: linear-gradient(145deg, #102038, #132945);
+            border: 1px solid var(--line);
+            border-radius: 20px;
+            padding: 26px;
+            margin: 22px 0
+        }
+
+        .step {
+            display: inline-flex;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            align-items: center;
+            justify-content: center;
+            background: var(--a);
+            color: #07111f;
+            font-weight: 900
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--a);
+            color: #07111f;
+            text-decoration: none;
+            font-weight: 800;
+            padding: 12px 18px;
+            border-radius: 11px;
+            margin-top: 12px
+        }
+
+        .btn.alt {
+            background: transparent;
+            color: var(--text);
+            border: 1px solid var(--line)
+        }
+
+        .code {
+            white-space: pre-wrap;
+            overflow: auto;
+            background: #040a12;
+            border: 1px solid var(--line);
+            border-radius: 13px;
+            padding: 18px;
+            font: 14px/1.55 ui-monospace, Consolas, monospace
+        }
+
+        .copy {
+            float: right;
+            background: #132945;
+            color: var(--text);
+            border: 1px solid var(--line);
+            border-radius: 9px;
+            padding: 8px 12px;
+            cursor: pointer
+        }
+
+        .callout {
+            border-left: 4px solid var(--a);
+            background: #0a1728;
+            padding: 14px 16px;
+            border-radius: 0 10px 10px 0
+        }
+
+        .check label {
+            display: block;
+            margin: 9px 0;
+            color: var(--muted)
+        }
+
+        .progress {
+            display: flex;
+            gap: 6px;
+            margin: 25px auto;
+            max-width: 700px
+        }
+
+        .progress span {
+            height: 6px;
+            flex: 1;
+            background: var(--line);
+            border-radius: 9px
+        }
+
+        .progress span.on {
+            background: var(--a)
+        }
+
+        footer {
+            text-align: center;
+            color: var(--muted);
+            padding: 35px;
+            border-top: 1px solid var(--line);
+            margin-top: 30px
+        }
+
+        @media(max-width:700px) {
+            .nav {
+                align-items: flex-start
+            }
+
+            .badge {
+                display: none
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="wrap nav">
+            <strong>🤖 Laboratorio de mejora de mi hoja de vida</strong>
+
+        </div>
+    </header>
+
+    <main>
+
+        <section class="hero">
+            <div class="wrap">
+                <div class="k">IA generativa · análisis · decisión · mejora</div>
+                <h1>Mejora tu hoja de vida con IA</h1>
+                <p class="muted">Utiliza una herramienta de IA generativa para revisar la claridad, organización y
+                    pertinencia de tu hoja de vida. Analiza las sugerencias y decide cuáles son pertinentes para tu
+                    contexto académico o laboral.</p>
+                <div class="progress"><span class="on"></span><span></span><span></span><span></span><span></span></div>
+                <a class="btn" href="#paso1">Comenzar</a>
+            </div>
+        </section>
+
+        <section id="paso1">
+            <div class="wrap card">
+                <div class="step">1</div>
+                <h2>Prepara tu hoja de vida</h2>
+                <p class="muted">Ten disponible la versión inicial de tu hoja de vida antes de comenzar.</p>
+                <div class="check">
+                    <label><input type="checkbox"> Tengo mi versión inicial.</label>
+                    <label><input type="checkbox"> La información es verdadera y corresponde a mi contexto.</label>
+                    <label><input type="checkbox"> Puedo editar el documento.</label>
+                </div>
+                <div class="callout"><strong>Recuerda:</strong> la IA será un apoyo para revisar tu producto. Tú tomarás
+                    las decisiones.</div>
+                <a class="btn" href="#paso2">Ir al paso 2 →</a>
+            </div>
+        </section>
+
+        <section id="paso2">
+            <div class="wrap card">
+                <div class="step">2</div>
+                <h2>Utiliza la IA generativa</h2>
+                <p class="muted">Copia el prompt y úsalo en la herramienta de IA generativa disponible para la
+                    actividad.</p>
+                <button class="copy" onclick="copiar()">Copiar prompt</button>
+
+                <pre id="prompt" class="code"># Revisión y mejora de mi hoja de vida
+
+## Rol
+Actúa como un orientador en la elaboración de hojas de vida para contextos académicos y laborales.
+
+## Objetivo
+Ayúdame a revisar mi hoja de vida para identificar oportunidades de mejora en la claridad, organización y pertinencia de la información.
+
+## Contexto
+Estoy elaborando una hoja de vida para utilizarla en situaciones académicas o laborales.
+
+## Instrucciones
+Analiza la información que te proporcionaré y:
+
+1. Identifica información que esté poco clara o desorganizada.
+2. Señala información que podría ser más pertinente para mi contexto.
+3. Propón mejoras de redacción cuando sean necesarias.
+4. Explica brevemente el motivo de cada sugerencia.
+5. No inventes información sobre mi experiencia, formación o habilidades.
+6. No elimines información sin explicar por qué podría ser conveniente modificarla.
+
+## Importante
+No quiero que construyas una hoja de vida completamente nueva.
+
+Quiero recibir recomendaciones para mejorar mi propia hoja de vida y tomar decisiones sobre cuáles sugerencias son pertinentes para mi contexto.
+
+## Resultado esperado
+Presenta las recomendaciones en una tabla con las siguientes columnas:
+
+| Aspecto | Situación identificada | Sugerencia | Justificación |
+|---|---|---|---|
+
+Al finalizar, indica cuáles aspectos requieren mayor atención.
+
+## Información de mi hoja de vida
+
+[Pega aquí la información de tu hoja de vida]</pre>
+
+                <a class="btn" href="#paso3">Ya tengo las sugerencias →</a>
+            </div>
+        </section>
+
+        <section id="paso3">
+            <div class="wrap card">
+                <div class="step">3</div>
+                <h2>Analiza las sugerencias</h2>
+                <p class="muted">Revisa las recomendaciones de la IA y toma una decisión fundamentada sobre cuáles son
+                    pertinentes para tu contexto.</p>
+
+                <div class="callout">
+                    <strong>Recuerda:</strong> una sugerencia de IA no es automáticamente correcta. Analiza, justifica y
+                    decide.
+                </div>
+
+                <h3>Registra tus decisiones</h3>
+                <p class="muted">La información de este análisis se registrará posteriormente en el formulario de
+                    evidencia.</p>
+
+                <div class="check">
+                    <label><input type="checkbox"> Identifiqué las sugerencias más relevantes.</label>
+                    <label><input type="checkbox"> Analicé si cada sugerencia es pertinente.</label>
+                    <label><input type="checkbox"> Puedo explicar por qué acepto, rechazo o adapto una
+                        sugerencia.</label>
+                </div>
+
+                <a class="btn" href="#paso4">Continuar al paso 4 →</a>
+            </div>
+        </section>
+
+        <section id="paso4">
+            <div class="wrap card">
+                <div class="step">4</div>
+                <h2>Aplica las mejoras</h2>
+                <ol>
+                    <li>Selecciona las sugerencias que decidiste aplicar.</li>
+                    <li>Edita tu hoja de vida en el procesador de texto.</li>
+                    <li>Comprueba que la información siga siendo verdadera y pertinente.</li>
+                    <li>Guarda la versión ajustada.</li>
+                </ol>
+
+                <div class="callout">
+                    <strong>Producto:</strong> hoja de vida ajustada después del proceso de revisión con IA generativa.
+                </div>
+
+                <a class="btn" href="#paso5">Ir a la entrega →</a>
+            </div>
+        </section>
+
+        <section id="paso5">
+            <div class="wrap card">
+                <div class="step">5</div>
+                <h2>Entrega tu evidencia</h2>
+
+                <p>Has completado el proceso de revisión y mejora. Ahora debes demostrar lo realizado.</p>
+
+                <h3>¿Qué debes entregar?</h3>
+                <ol>
+                    <li><strong>Hoja de vida ajustada</strong> en formato Word o PDF.</li>
+                    <li><strong>Formulario de evidencia</strong> diligenciado con el análisis de las sugerencias de IA y
+                        las decisiones tomadas.</li>
+                </ol>
+
+                <h3>Antes de enviar</h3>
+                <div class="check">
+                    <label><input type="checkbox"> Revisé mi hoja de vida con IA generativa.</label>
+                    <label><input type="checkbox"> Analicé las sugerencias recibidas.</label>
+                    <label><input type="checkbox"> Justifiqué cuáles sugerencias consideré pertinentes.</label>
+                    <label><input type="checkbox"> Apliqué las mejoras seleccionadas.</label>
+                    <label><input type="checkbox"> Tengo lista la versión ajustada de mi hoja de vida.</label>
+                </div>
+
+                <div class="callout">
+                    <strong>Importante:</strong> el formulario registra tu proceso de análisis y toma de decisiones. La
+                    IA no decide por ti.
+                </div>
+
+                <!-- REEMPLAZAR ESTA URL POR LA URL REAL DEL GOOGLE FORM -->
+                <a class="btn" href="https://forms.gle/VnkhgPrWjisXYAP97" target="_blank" rel="noopener">📤 Completar
+                    formulario y
+                    entregar evidencia</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        Laboratorio de mejora de mi hoja de vida · Integración pedagógica de IA generativa
+    </footer>
+
+    <script>
+        function copiar() {
+            const text = document.getElementById('prompt').innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                const b = document.querySelector('.copy');
+                const old = b.textContent;
+                b.textContent = '✓ Copiado';
+                setTimeout(() => b.textContent = old, 1500);
+            });
+        }
+    </script>
+</body>
+
+</html>
